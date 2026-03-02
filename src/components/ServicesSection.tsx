@@ -52,7 +52,7 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-20 lg:py-28 bg-background">
+  <section id="services" className="py-20 lg:py-28 relative">
     <div className="container mx-auto px-4 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,9 @@ const ServicesSection = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">Our Services</h2>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3">
+          Our <span className="text-gradient-gold">Services</span>
+        </h2>
         <p className="text-muted-foreground font-body max-w-xl mx-auto">
           Comprehensive academic and professional document services tailored to international standards.
         </p>
@@ -74,16 +76,16 @@ const ServicesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-secondary rounded-xl p-6 lg:p-8 shadow-card hover:shadow-card-hover transition-shadow duration-300"
+            className="glass rounded-2xl p-6 lg:p-8 hover:shadow-glow hover:border-glow transition-all duration-500 group"
           >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-              <s.icon size={24} className="text-primary" />
+            <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors duration-300">
+              <s.icon size={26} className="text-accent" />
             </div>
             <h3 className="font-display text-xl text-foreground mb-1">{s.title}</h3>
-            <p className="text-muted-foreground text-sm font-body mb-4">{s.desc}</p>
-            <ul className="space-y-2">
+            <p className="text-muted-foreground text-sm font-body mb-5">{s.desc}</p>
+            <ul className="space-y-2.5">
               {s.items.map((item, j) => (
-                <li key={j} className="flex items-start gap-2 text-sm font-body text-foreground/80">
+                <li key={j} className="flex items-start gap-2.5 text-sm font-body text-foreground/75">
                   <Check size={14} className="text-success mt-1 shrink-0" />
                   <span>{item}</span>
                 </li>

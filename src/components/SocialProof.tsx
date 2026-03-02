@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Star } from "lucide-react";
+import { ShieldCheck, Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -25,16 +25,17 @@ const testimonials = [
 ];
 
 const SocialProof = () => (
-  <section className="py-20 lg:py-28 bg-secondary">
-    <div className="container mx-auto px-4 lg:px-8">
+  <section className="py-20 lg:py-28 relative overflow-hidden">
+    <div className="absolute inset-0 gradient-dark-accent" />
+    <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
-          Supporting Students & Professionals Across Borders
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3">
+          Trusted <span className="text-gradient-gold">Across Borders</span>
         </h2>
       </motion.div>
 
@@ -46,14 +47,15 @@ const SocialProof = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-background rounded-xl p-6 shadow-card"
+            className="glass rounded-2xl p-6 hover:border-glow transition-all duration-500 relative"
           >
-            <div className="flex gap-1 mb-3">
+            <Quote size={20} className="text-accent/30 absolute top-5 right-5" />
+            <div className="flex gap-1 mb-4">
               {Array.from({ length: 5 }).map((_, j) => (
                 <Star key={j} size={14} className="fill-accent text-accent" />
               ))}
             </div>
-            <p className="text-foreground/80 text-sm font-body mb-4 leading-relaxed italic">"{t.text}"</p>
+            <p className="text-foreground/75 text-sm font-body mb-5 leading-relaxed italic">"{t.text}"</p>
             <div>
               <p className="font-body font-semibold text-sm text-foreground">{t.name}</p>
               <p className="text-muted-foreground text-xs font-body">{t.location}</p>
@@ -62,7 +64,7 @@ const SocialProof = () => (
         ))}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-wrap justify-center gap-8">
         <div className="flex items-center gap-2 text-muted-foreground text-sm font-body">
           <ShieldCheck size={16} className="text-success" />
           <span>Confidentiality Guaranteed</span>
