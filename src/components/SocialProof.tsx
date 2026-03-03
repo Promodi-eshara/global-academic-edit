@@ -25,8 +25,7 @@ const testimonials = [
 ];
 
 const SocialProof = () => (
-  <section className="py-20 lg:py-28 relative overflow-hidden">
-    <div className="absolute inset-0 gradient-dark-accent" />
+  <section className="py-20 lg:py-28 relative overflow-hidden gradient-section">
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -34,8 +33,8 @@ const SocialProof = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3">
-          Trusted <span className="text-gradient-gold">Across Borders</span>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 font-bold">
+          Trusted <span className="text-gradient-blue">Across Borders</span>
         </h2>
       </motion.div>
 
@@ -43,13 +42,14 @@ const SocialProof = () => (
         {testimonials.map((t, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, rotateX: 10 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="glass rounded-2xl p-6 hover:border-glow transition-all duration-500 relative"
+            transition={{ delay: i * 0.12, type: "spring", stiffness: 100 }}
+            whileHover={{ y: -4 }}
+            className="bg-card rounded-2xl p-6 shadow-card border border-border hover:shadow-card-hover hover:border-accent/20 transition-all duration-500 relative"
           >
-            <Quote size={20} className="text-accent/30 absolute top-5 right-5" />
+            <Quote size={20} className="text-accent/20 absolute top-5 right-5" />
             <div className="flex gap-1 mb-4">
               {Array.from({ length: 5 }).map((_, j) => (
                 <Star key={j} size={14} className="fill-accent text-accent" />

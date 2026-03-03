@@ -4,19 +4,18 @@ import { ArrowRight, Mail } from "lucide-react";
 
 const CTASection = () => (
   <section className="py-20 lg:py-28 relative overflow-hidden">
-    {/* Ambient glow */}
-    <div className="absolute inset-0">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/8 rounded-full blur-[120px]" />
-    </div>
+    {/* Decorative bg */}
+    <div className="absolute inset-0 bg-accent/5" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
 
     <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+        className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 font-bold"
       >
-        Ready to <span className="text-gradient-gold">Improve</span> Your Document?
+        Ready to <span className="text-gradient-blue">Improve</span> Your Document?
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -35,13 +34,13 @@ const CTASection = () => (
         transition={{ delay: 0.2 }}
         className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
       >
-        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8 shadow-glow group">
+        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold text-base px-8 shadow-blue group">
           <a href="#contact">
             Request Quote Now
             <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </a>
         </Button>
-        <Button asChild size="lg" variant="outline" className="border-border text-foreground hover:bg-muted hover:border-accent/30 font-body text-base px-8">
+        <Button asChild size="lg" variant="outline" className="border-accent/30 text-foreground hover:bg-accent/5 hover:border-accent/50 font-body text-base px-8">
           <a href="mailto:consultantletter@gmail.com">
             <Mail size={18} className="mr-2" />
             Email Us

@@ -1,10 +1,10 @@
 import { Mail } from "lucide-react";
 
 const Footer = () => (
-  <footer className="py-10 border-t border-border relative">
+  <footer className="py-10 border-t border-border relative bg-card">
     <div className="container mx-auto px-4 lg:px-8">
       <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        <a href="#" className="font-display text-xl text-gradient-gold">Contora</a>
+        <a href="#" className="font-display text-xl font-bold text-gradient-blue">Contora</a>
         <nav className="flex flex-wrap gap-6">
           {["Services", "How It Works", "FAQ", "Contact"].map((l) => (
             <a

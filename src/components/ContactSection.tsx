@@ -62,8 +62,8 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3">
-            Get in <span className="text-gradient-gold">Touch</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 font-bold">
+            Submit Your <span className="text-gradient-blue">Request</span>
           </h2>
           <p className="text-muted-foreground font-body text-sm">
             Fill out the form below to request a quote or upload your document.
@@ -71,11 +71,12 @@ const ContactSection = () => {
         </motion.div>
 
         <motion.form
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ type: "spring", stiffness: 80 }}
           onSubmit={handleSubmit}
-          className="glass rounded-2xl p-6 lg:p-8 shadow-glow-lg space-y-5"
+          className="bg-card rounded-2xl p-6 lg:p-8 shadow-card-hover border border-border space-y-5"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -99,7 +100,7 @@ const ContactSection = () => {
                 <SelectTrigger className="font-body bg-muted/50 border-border">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
-                <SelectContent className="glass-strong">
+                <SelectContent className="bg-card border-border">
                   {services.map((s) => (
                     <SelectItem key={s} value={s} className="font-body">{s}</SelectItem>
                   ))}
@@ -123,7 +124,7 @@ const ContactSection = () => {
             <Textarea id="instructions" name="instructions" placeholder="Any specific requirements..." className="font-body min-h-[100px] bg-muted/50 border-border focus:border-accent" />
           </div>
 
-          <Button type="submit" disabled={submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold shadow-glow group">
+          <Button type="submit" disabled={submitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-body font-semibold shadow-blue group">
             {submitting ? "Opening..." : (
               <>
                 Submit Request

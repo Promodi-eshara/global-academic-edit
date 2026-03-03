@@ -19,8 +19,8 @@ const WhyChooseUs = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3">
-          Why Clients <span className="text-gradient-gold">Choose Us</span>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 font-bold">
+          Why Clients <span className="text-gradient-blue">Choose Us</span>
         </h2>
       </motion.div>
 
@@ -28,15 +28,19 @@ const WhyChooseUs = () => (
         {reasons.map((r, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="flex items-center gap-4 glass rounded-xl p-5 hover:border-glow hover:shadow-glow transition-all duration-500 group"
+            transition={{ delay: i * 0.1, type: "spring", stiffness: 120 }}
+            whileHover={{ scale: 1.04, y: -4 }}
+            className="flex items-center gap-4 bg-card rounded-xl p-5 shadow-card border border-border hover:shadow-card-hover hover:border-accent/20 transition-all duration-500 group"
           >
-            <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+            <motion.div
+              whileHover={{ rotate: 10 }}
+              className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors"
+            >
               <r.icon size={20} className="text-accent" />
-            </div>
+            </motion.div>
             <span className="text-sm font-body font-medium text-foreground">{r.label}</span>
           </motion.div>
         ))}
