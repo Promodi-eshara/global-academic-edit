@@ -10,18 +10,17 @@ const challenges = [
 ];
 
 const ProblemSection = () => (
-  <section className="py-20 lg:py-28 relative overflow-hidden">
-    <div className="absolute inset-0 gradient-dark-accent" />
+  <section className="py-20 lg:py-28 relative overflow-hidden gradient-section">
     <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <div className="max-w-3xl mx-auto text-center mb-14">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4"
+          className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 font-bold"
         >
           Writing Challenges in a{" "}
-          <span className="text-gradient-gold">Competitive</span> Global Environment
+          <span className="text-gradient-blue">Competitive</span> Global Environment
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,11 +37,11 @@ const ProblemSection = () => (
         {challenges.map((c, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="flex items-start gap-3 glass rounded-xl p-4 hover:border-glow transition-all duration-300"
+            transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+            className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-card border border-border hover:shadow-card-hover hover:border-accent/20 transition-all duration-300"
           >
             <AlertTriangle size={18} className="text-accent mt-0.5 shrink-0" />
             <span className="text-foreground font-body text-sm">{c}</span>
@@ -51,10 +50,11 @@ const ProblemSection = () => (
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="max-w-2xl mx-auto rounded-xl p-6 text-center border-glow glass shadow-glow-lg"
+        transition={{ type: "spring", stiffness: 100 }}
+        className="max-w-2xl mx-auto rounded-xl p-6 text-center bg-accent/5 border border-accent/20 shadow-glow"
       >
         <Sparkles size={20} className="text-accent mx-auto mb-3" />
         <p className="text-foreground font-body text-sm md:text-base leading-relaxed">

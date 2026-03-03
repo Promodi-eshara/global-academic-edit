@@ -22,10 +22,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-strong shadow-lg" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass-strong shadow-card" : "bg-transparent"}`}>
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#" className="font-display text-2xl tracking-tight text-foreground">
-          <span className="text-gradient-gold">Contora</span>
+        <a href="#" className="font-display text-2xl tracking-tight font-bold text-gradient-blue">
+          Contora
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -38,7 +38,7 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow font-body">
+          <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-blue font-body">
             <a href="#contact">Request a Quote</a>
           </Button>
         </div>
