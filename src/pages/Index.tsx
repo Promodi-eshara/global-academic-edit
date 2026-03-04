@@ -1,27 +1,27 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
-import ServicesSection from "@/components/ServicesSection";
 import HowItWorks from "@/components/HowItWorks";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import SocialProof from "@/components/SocialProof";
 import CTASection from "@/components/CTASection";
-import FAQSection from "@/components/FAQSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import HomeServices from "@/components/HomeServices";
+import WhoWeHelp from "@/components/WhoWeHelp";
+import MiniContact from "@/components/MiniContact";
 
 const Index = () => (
   <>
     <Navbar />
     <HeroSection />
     <ProblemSection />
-    <ServicesSection />
+    <HomeServices />
+    <WhoWeHelp />
     <HowItWorks />
     <WhyChooseUs />
     <SocialProof />
+    <MiniContact />
     <CTASection />
-    <FAQSection />
-    <ContactSection />
     <Footer />
   </>
 );
