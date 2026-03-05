@@ -52,7 +52,7 @@ const HeroSection = () => {
       </AnimatePresence>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-primary/85" />
+      <div className="absolute inset-0 bg-primary/60" />
 
       {/* Decorative shapes */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px]" />
