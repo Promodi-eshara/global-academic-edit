@@ -15,9 +15,9 @@ const Footer = () => (
         <div>
           <h4 className="font-display font-semibold text-lg mb-4">Academic Services</h4>
           <div className="flex flex-col gap-2">
-            <span className="text-sm opacity-80">Thesis Editing</span>
-            <span className="text-sm opacity-80">AI & Similarity Review</span>
-            <span className="text-sm opacity-80">SOP & LOR Assistance</span>
+            <Link to="/writing-editing" className="text-sm opacity-80 hover:opacity-100 transition-opacity">Thesis Editing</Link>
+            <Link to="/writing-editing" className="text-sm opacity-80 hover:opacity-100 transition-opacity">AI & Similarity Review</Link>
+            <Link to="/writing-editing" className="text-sm opacity-80 hover:opacity-100 transition-opacity">SOP & LOR Assistance</Link>
           </div>
         </div>
         <div>
